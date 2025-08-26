@@ -13,6 +13,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #f0fdf4; /* Light green background */
         }
+
         /* Styles for consistent navigation buttons */
         .nav-button {
             display: flex;
@@ -25,86 +26,49 @@
             width: 120px;
             border-radius: 9999px;
             transition: all 0.3s ease-in-out;
-            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+
         .nav-button:hover {
+            transform: scale(1.05);
             background-color: #2f855a;
         }
     </style>
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <header class="bg-white shadow-lg mx-2 my-4 rounded-xl">
-        <nav class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <div class="text-green-900 font-bold text-xl">ECOAQUA</div>
-            <div class="md:hidden">
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="text-green-900 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+<body class="antialiased text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 rounded-b-xl m-2">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <!-- Logo Section -->
+            <div class="flex items-center space-x-2 mb-4 sm:mb-0">
+                <!-- SVG for the Logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-16 h-16 text-green-600">
+                    <path fill-rule="evenodd" d="M11.54 22.351A2.543 2.543 0 0 1 9 20.25a2.543 2.543 0 0 1-2.542-2.101C5.759 15.658 3.554 13.003 2.65 11.23a2.543 2.543 0 0 1 2.39-4.223 2.542 2.542 0 0 1 2.455 2.15l-.019.103a.75.75 0 0 0 .733.649h1.996a.75.75 0 0 0 .733-.649l-.019-.103a2.542 2.542 0 0 1 2.455-2.15 2.543 2.543 0 0 1 2.39 4.223c-.904 1.773-3.109 4.428-4.308 6.919a.75.75 0 0 0-.258.468v1.077a.75.75 0 0 0 1.054.674l.117-.06a.75.75 0 0 1 .84.147l.214.214a.75.75 0 0 1 0 1.06l-.214.214a.75.75 0 0 1-.53.22h-.53a.75.75 0 0 0-.75.75v.75a.75.75 0 0 1-1.5 0v-.75a.75.75 0 0 0-.75-.75h-.53a.75.75 0 0 1-.53-.22l-.214-.214a.75.75 0 0 1 0-1.06l.214-.214a.75.75 0 0 1 .84-.147l.117.06a.75.75 0 0 0 1.054-.674v-1.077a.75.75 0 0 0-.258-.468Z" clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M6.912 2.673a2.544 2.544 0 0 1 3.578-.112 2.544 2.544 0 0 1 3.235 1.547c.216.711.233 1.488.293 2.274a.75.75 0 0 0 .723.723h1.996a.75.75 0 0 0 .723-.723c.06-.786.077-1.563.293-2.274a2.544 2.544 0 0 1 3.235-1.547 2.544 2.544 0 0 1 3.578.112c.92.835.918 2.36.19 3.195-.828.932-2.14 1.636-3.869 2.155a.75.75 0 0 0-.482.593v.75a.75.75 0 0 1-1.5 0v-.75a.75.75 0 0 0-.482-.593c-1.729-.519-3.04-1.223-3.869-2.155-.728-.835-.73-2.36-.19-3.195ZM12 4.5A.5.5 0 0 1 12 5H12a.5.5 0 0 1 0-.5Z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-lg sm:text-2xl font-bold text-green-700">ECOAQUA RESORT</span>
             </div>
-            <div id="nav-links" class="hidden md:flex md:items-center space-x-4">
-                <a href="index.html" class="nav-button">Home</a>
-                <a href="about us page.html" class="nav-button">About Us</a>
-                <a href="Services.html" class="nav-button">Services</a>
-                <a href="contact.html" class="nav-button">Contact</a>
-            </div>
+            <!-- Navigation Links -->
+            <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-8 text-center">
+                <li><a href="index.html" class="nav-button">Home</a></li>
+                <li><a href="about.html" class="nav-button">About Us</a></li>
+                <li><a href="services.html" class="nav-button">Services</a></li>
+            </ul>
         </nav>
-        <!-- Mobile menu dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white mx-4 rounded-lg shadow-inner">
-            <a href="index.html" class="block py-2 px-4 text-center text-green-900 hover:bg-green-100 rounded-lg">Home</a>
-            <a href="about us page.html" class="block py-2 px-4 text-center text-green-900 hover:bg-green-100 rounded-lg">About Us</a>
-            <a href="Services.html" class="block py-2 px-4 text-center text-green-900 hover:bg-green-100 rounded-lg">Services</a>
-            <a href="contact.html" class="block py-2 px-4 text-center text-green-900 hover:bg-green-100 rounded-lg">Contact</a>
-        </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- Hero Section -->
-        <section class="bg-white p-8 rounded-2xl shadow-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
-            <div class="md:w-1/2">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-green-900 mb-4 leading-tight">Welcome to ECOAQUA RESORT</h1>
-                <p class="text-lg text-gray-700">Experience a serene escape where nature meets luxury. Our resort offers a unique blend of eco-friendly amenities and breathtaking natural beauty for an unforgettable getaway.</p>
-            </div>
-            <div class="md:w-1/2 rounded-xl overflow-hidden shadow-md">
-                <img src="https://placehold.co/600x400/065f46/ffffff?text=Resort+Image" alt="Beautiful resort image" class="w-full h-auto object-cover">
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <!-- Feature Card 1 -->
-            <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
-                <div class="text-green-600 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-green-900 mb-2">Relaxing Environment</h3>
-                <p class="text-gray-700">Immerse yourself in tranquility with our peaceful lake and lush green surroundings, perfect for unwinding.</p>
-            </div>
-            <!-- Feature Card 2 -->
-            <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
-                <div class="text-green-600 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 12h-2V7h-2V4h-2V2H7v2H5v2H3v2H2v6h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v2h2V12z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-green-900 mb-2">Modern Amenities</h3>
-                <p class="text-gray-700">Enjoy state-of-the-art facilities including a swimming pool, restaurant, and cozy cottages with all modern comforts.</p>
-            </div>
-            <!-- Feature Card 3 -->
-            <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
-                <div class="text-green-600 mb-4">
-                    <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.25 14.5l-4-4L6 11.25 10.75 16 18 8.75 16.75 7.5l-6.5 6.5z"/>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-green-900 mb-2">Eco-Friendly Practices</h3>
-                <p class="text-gray-700">We are committed to preserving our environment. Our resort is built on sustainable practices to protect the planet.</p>
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Home Section -->
+        <section id="home" class="bg-white mx-2 mt-4 p-8 sm:p-12 md:p-16 rounded-xl shadow-lg">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-green-900 mb-4">Welcome to ECOAQUA RESORT MADUDU</h1>
+                <p class="text-xl text-green-700 max-w-3xl mx-auto mb-8">
+                    Your destination for sustainable consultancy, project management, and a unique ecotourism experience.
+                </p>
+                <a href="services.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+                    Explore Our Services
+                </a>
             </div>
         </section>
     </main>
@@ -114,11 +78,5 @@
         <p>&copy; 2025 ECOAQUA RESORT MADUDU (U) LIMITED. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            var mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
